@@ -16,7 +16,11 @@ console.log(productWithReduce([4, 3])); // 12
 */
 
 let productWithReduce = function(nums) {
-    // Your code here
+    let initialValue = 1;
+    const product = nums.reduce(function(accumulator, currentValue) {
+      return accumulator * currentValue;
+    },initialValue);
+    return product;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -25,4 +29,4 @@ try {
   module.exports = productWithReduce;
 } catch (e) {
   module.exports = null;
-}
+}
