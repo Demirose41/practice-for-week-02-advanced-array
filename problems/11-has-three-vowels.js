@@ -17,7 +17,17 @@ console.log(hasThreeVowels('go home'));         //  false
 */
 
 let hasThreeVowels = function(string) {
-    // Your code here
+    const split_string = string.split('');
+    const vowels = 'aeiou';
+    let vowels_found = [];
+    let vowel_count = 0;
+    split_string.forEach(element => {
+        if(vowels.includes(element) && !vowels_found.includes(element)){
+            vowels_found.push(element)
+            vowel_count++;
+        };
+    });
+    return vowel_count >= 3 ;
 };
 
 // Your code here
@@ -28,4 +38,4 @@ try {
     module.exports = hasThreeVowels;
 } catch (e) {
     module.exports = null;
-}
+}

@@ -16,8 +16,15 @@ console.log(longestWord('')); // ''
 
 */
 
+const compareLength = function (accumulator, currentValue){
+    return accumulator.length < currentValue.length  ? currentValue : accumulator;
+}
+
 let longestWord = function(sentence) {
-    // Your code here
+    let words = sentence.split(" ");
+    let initialWord = words[0]; 
+    
+    return words.reduce(compareLength, initialWord);
 };
 
 // Your code here
@@ -28,4 +35,4 @@ try {
     module.exports = longestWord;
 } catch (e) {
     module.exports = null;
-}
+}
