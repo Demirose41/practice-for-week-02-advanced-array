@@ -26,7 +26,13 @@ console.log(twoDimensionalProduct(arr2)); // 88
 */
 
 let twoDimensionalProduct = function(arr) {
-    // Your code here
+  let initialValue = 1; 
+   return arr.reduce(function(accumulator1, currentValue1) {
+  
+     return accumulator1 * currentValue1.reduce(function(accumulator2, currentValue2) {
+       return accumulator2 * currentValue2;
+     },initialValue);
+   },initialValue);
 };
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
