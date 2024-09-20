@@ -17,13 +17,27 @@ console.log(choosePrimes([36, 48, 9, 13, 19])); // [ 13, 19 ]
 console.log(choosePrimes([5, 6, 4, 11, 2017])); // [ 5, 11, 2017 ]
 
 */
+const arrayRange = function(start, stop, step){
+    return Array.from( { length : (start, stop) / step + 1}, (value, index) => start + index * step);
+} 
+
 
 let isPrime = function(num) {
-    // Your code here
+    const range = arrayRange(2,num - 2 , 1);
+    let isPrime = true;
+    range.forEach(element => {
+        
+       if(num % element == 0 && num != element){
+       	isPrime = false;
+       };
+    });
+    return isPrime;
 }
 
 let choosePrimes = function(nums) {
-    // Your code here
+    return nums.filter(function(num) {
+        return isPrime(num);
+    });
 }
 
 // alternative solution using Array.filter
@@ -37,4 +51,4 @@ try {
     module.exports = choosePrimes;
 } catch (e) {
     module.exports = null;
-}
+}

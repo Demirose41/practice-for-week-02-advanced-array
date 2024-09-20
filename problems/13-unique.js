@@ -14,8 +14,19 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 
 */
 
+let isUnique = function(array, element) {
+    return !array.includes(element);
+} 
+
 let unique = function(array) {
-    // Your code here
+   let unique_words = [];
+   return array.filter(function(word) {
+    if(isUnique(unique_words, word)){
+        unique_words.push(word);
+        return word;
+    } ;
+   });
+
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -24,4 +35,4 @@ try {
     module.exports = unique;
 } catch (e) {
     module.exports = null;
-}
+}
